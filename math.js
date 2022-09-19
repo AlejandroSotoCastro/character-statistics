@@ -68,4 +68,4 @@ class DndUtils {
   }
 }
 
-module.exports = new DndUtils();
+module.exports = DndUtils;

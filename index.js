@@ -1,6 +1,8 @@
 //**Calculate how weird were my rolls */
 
-const utils = require("./math");
+const u = require("./math");
+const utils = new u();
+
 // Learn about API authentication here: https://plotly.com/nodejs/getting-started
 // Find your api_key here: https://plotly.com/settings/api
 
