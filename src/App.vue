@@ -33,6 +33,7 @@ export default {
         Number(this.stat1),
       ];
       console.log(utils.statRoll(), inputs);
+      const myStats = [15, 10, 10, 15, 10, 16];
       this.result = calcRank(distribution, inputs);
     },
   },
@@ -49,5 +50,5 @@ export default {
     <input v-model="stat6" />
     <button>Add Todo</button>
   </form>
-  <p>{{ result }}</p>
+  <p>Your stats are better than the {{ result }}% of possible stats</p>
 </template>
