@@ -1,13 +1,14 @@
 //**Calculate how weird were my rolls */
 
-const u = require("./math");
+import u from "./math.mjs";
 const utils = new u();
 
 // Learn about API authentication here: https://plotly.com/nodejs/getting-started
 // Find your api_key here: https://plotly.com/settings/api
 
-const { userName, key } = require("./secrets");
-const plotly = require("plotly")(userName, key);
+import { userName, key } from "./secrets.mjs";
+import p from "plotly";
+const plotly = p(userName, key);
 
 const runs = 1e5;
 
@@ -20,7 +21,24 @@ for (let i = 0; i < runs; i++) {
 
 var data = [
   {
-    x: ["3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18"],
+    x: [
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "10",
+      "11",
+      "12",
+      "13",
+      "14",
+      "15",
+      "16",
+      "17",
+      "18",
+    ],
     y: results,
     type: "bar",
   },
@@ -53,7 +71,10 @@ const myStats = [16, 18, 8, 17, 14, 12];
 console.log("My Points", utils.calcPoints(myStats));
 
 // With simple values
-const percentile = require("percentile");
+import percentRank from "percentile-rank";
 // const percentileScore = 98.5;
 const percentileScore = 98.5;
-console.log(`Percentil ${percentileScore} `, percentile(percentileScore, results2));
+results2.sort(function (a, b) {
+  return a - b;
+});
+console.log("lets check", percentRank(results2, 57));
