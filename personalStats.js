@@ -68,7 +68,8 @@ plotly.plot(data2, graphOptions, function (err, msg) {
 
 //my stats
 const myStats = [16, 18, 8, 17, 14, 12];
-console.log("My Points", utils.calcPoints(myStats));
+const pointValue = utils.calcPoints(myStats);
+console.log("My Points", pointValue);
 
 // With simple values
 import percentRank from "percentile-rank";
@@ -77,4 +78,4 @@ const percentileScore = 98.5;
 results2.sort(function (a, b) {
   return a - b;
 });
-console.log("lets check", percentRank(results2, 57));
+console.log("lets check", percentRank(results2, pointValue));
