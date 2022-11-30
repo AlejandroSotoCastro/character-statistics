@@ -6,6 +6,8 @@ const runs = 1e6;
 
 // create a distribution
 const distribution = [];
+distribution.push(utils.calcPoints([18, 18, 18, 18, 18, 18]));
+distribution.push(utils.calcPoints([3, 3, 3, 3, 3, 3]));
 for (let i = 0; i < runs; i++) {
   distribution.push(utils.calcPoints(utils.charStats()));
 }
